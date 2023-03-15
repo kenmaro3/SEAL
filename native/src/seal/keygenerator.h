@@ -30,12 +30,14 @@ namespace seal
     class KeyGenerator
     {
     public:
+        KeyGenerator();
         /**
         Creates a KeyGenerator initialized with the specified SEALContext.
 
         @param[in] context The SEALContext
         @throws std::invalid_argument if the encryption parameters are not valid
         */
+
         KeyGenerator(const SEALContext &context);
 
         /**
@@ -295,7 +297,7 @@ namespace seal
         */
         struct KeyGeneratorPrivateHelper;
 
-    private:
+        // private:
         KeyGenerator(const KeyGenerator &copy) = delete;
 
         KeyGenerator &operator=(const KeyGenerator &assign) = delete;
@@ -314,6 +316,8 @@ namespace seal
         example, if the secret key was provided in the constructor
         */
         void generate_sk(bool is_initialized = false);
+
+        void generate_sk(std::shared_ptr<UniformRandomGenerator>);
 
         /**
         Generates new public key matching to existing secret key.

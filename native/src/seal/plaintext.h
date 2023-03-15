@@ -788,7 +788,6 @@ namespace seal
         */
         struct PlaintextPrivateHelper;
 
-    private:
         void save_members(std::ostream &stream) const;
 
         void load_members(const SEALContext &context, std::istream &stream, SEALVersion version);

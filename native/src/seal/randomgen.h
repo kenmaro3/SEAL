@@ -488,13 +488,12 @@ namespace seal
             return default_seed_;
         }
 
-    protected:
-        SEAL_NODISCARD virtual auto create_impl(prng_seed_type seed) -> std::shared_ptr<UniformRandomGenerator> = 0;
-
-    private:
         prng_seed_type default_seed_ = {};
 
         bool use_random_seed_ = false;
+
+    protected:
+        SEAL_NODISCARD virtual auto create_impl(prng_seed_type seed) -> std::shared_ptr<UniformRandomGenerator> = 0;
     };
 
     /**

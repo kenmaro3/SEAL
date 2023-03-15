@@ -490,6 +490,10 @@ namespace seal
         @param[in] sec_level Determines whether a specific security level should be
         enforced according to HomomorphicEncryption.org security standard
         */
+
+        SEALContext()
+        {}
+
         SEALContext(
             const EncryptionParameters &parms, bool expand_mod_chain = true,
             sec_level_type sec_level = sec_level_type::tc128)

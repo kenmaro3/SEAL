@@ -290,7 +290,6 @@ namespace seal
             return sk_.pool();
         }
 
-    private:
         // We use a fresh memory pool with `clear_on_destruction' enabled.
         Plaintext sk_{ MemoryManager::GetPool(mm_prof_opt::mm_force_new, true) };
     };
